@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Hotel Luxury</title>
+
+  <!-- Fuente Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS del dashboard -->
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h2>🏨 Hotel Luxury</h2>
+
+    <a href="dashboard.html" class="active">🏠 Inicio</a>
+    <a href="reservas.html">📅 Reservas</a>
+    <a href="#">🛏 Habitaciones</a>
+    <a href="#">👥 Clientes</a>
+    <a href="#" onclick="cerrarSesion()">🚪 Cerrar sesión</a>
+  </aside>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="main-content">
+
+    <header class="topbar">
+      <h1>Bienvenido, Administrador</h1>
+      <p>Gestiona las reservas y habitaciones del hotel.</p>
+    </header>
+
+    <!-- TARJETAS -->
+    <section class="cards">
+      <div class="card">
+        <h3>🛏 Habitaciones</h3>
+        <p>25</p>
+      </div>
+
+      <div class="card">
+        <h3>📅 Reservas</h3>
+        <p>12</p>
+      </div>
+
+      <div class="card">
+        <h3>👥 Clientes</h3>
+        <p>18</p>
+      </div>
+
+      <div class="card">
+        <h3>💰 Ingresos</h3>
+        <p>S/ 8,450</p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <h2>Luxury Experience</h2>
+        <p>
+          Administra habitaciones, reservas y clientes desde un panel
+          moderno y elegante.
+        </p>
+        <a href="reservas.html" class="btn-primary">
+          Gestionar Reservas
+        </a>
+      </div>
+
+      <div class="hero-image">
+        <img src="img/fondo-inicio.jpg" alt="Hotel Luxury">
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    if (localStorage.getItem("logueado") !== "true") {
+      window.location.href = "index.html";
+    }
+
+    function cerrarSesion() {
+      localStorage.removeItem("logueado");
+      window.location.href = "index.html";
+    }
+  </script>
+
+</body>
+</html>

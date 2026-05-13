@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Luxury - Login</title>
+
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+  <div class="login-container">
+    
+    <div class="login-box">
+
+      <h1>Hotel Luxury</h1>
+      <p>Sistema de Reservas</p>
+
+      <input type="text" id="usuario" placeholder="Usuario">
+      <div class="password-container">
+      <input type="password" id="password" placeholder="Contraseña">
+      <span class="toggle-password" onclick="togglePassword()">👁️</span>
+    </div>
+      <button onclick="iniciarSesion()">Ingresar</button>
+
+      <p id="mensaje"></p>
+
+    </div>
+
+  </div>
+
+  <script src="js/login.js"></script>
+
+</body>
+</html>

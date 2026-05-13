@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Reservas | Hotel Luxury</title>
+
+  <!-- Fuente Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/reservas.css">
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h2>🏨 Hotel Luxury</h2>
+
+    <a href="dashboard.html">🏠 Inicio</a>
+    <a href="reservas.html" class="active">📅 Reservas</a>
+    <a href="#" onclick="cerrarSesion()">🚪 Cerrar sesión</a>
+  </aside>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="main-content">
+
+    <!-- ENCABEZADO -->
+    <header class="page-header">
+      <h1>Gestión de Reservas</h1>
+      <p>Registra, consulta y administra las habitaciones del hotel.</p>
+    </header>
+
+    <!-- FORMULARIO -->
+    <section class="form-card">
+      <h2>Nueva Reserva</h2>
+
+      <div class="form-grid">
+        <input type="number" id="numero" placeholder="Número de habitación">
+        <input type="text" id="cliente" placeholder="Nombre del cliente">
+        <input type="number" id="dias" placeholder="Días de estadía">
+        <input type="number" id="servicios" placeholder="Servicios extra (S/.)">
+      </div>
+
+      <div class="actions">
+        <button onclick="reservarHabitacion()">Reservar</button>
+        <button class="secondary" onclick="mostrarHabitaciones()">Mostrar</button>
+        <button class="secondary" onclick="buscarCliente()">Buscar Cliente</button>
+        <button class="danger" onclick="liberarHabitacion()">Liberar</button>
+      </div>
+    </section>
+
+    <!-- RESULTADOS -->
+    <section class="table-card">
+      <h2>Estado de Habitaciones</h2>
+      <div id="resultado"></div>
+    </section>
+
+  </main>
+
+  <script>
+    if (localStorage.getItem("logueado") !== "true") {
+      window.location.href = "index.html";
+    }
+
+    function cerrarSesion() {
+      localStorage.removeItem("logueado");
+      window.location.href = "index.html";
+    }
+  </script>
+
+  <script src="js/data.js"></script>
+  <script src="js/reservas.js"></script>
+</body>
+</html>
